@@ -1,0 +1,105 @@
+<div id="div1">
+    <div id="div2">
+        <img src="assets/logoWhite.png" alt="logo">   
+        <h3 id="Vermont"> VERMOUNT</h3>
+        <h5>corporation Divison</h5>
+        <div id="headsidename">
+            <h4 id="name">Saikiran Kota</h4> 
+        </div>
+    </div>
+    <div id="div3" class="col-12 col-md-5 col-lg-4 login-form">
+        <div id="div4">
+            <h6 style="text-align: center;">
+                OFFICE OF THE  SECRETRY OF STATE
+            </h6>
+            <h6 class="mt-3 mb-0 bg-title"  style="text-align: center; color: rgb(143, 148, 148);" >
+                In-House-Portal
+            </h6>
+        </div>
+        <div id="formdiv">
+            <h3 _ngcontent-wsp-c301="" style="font-size: medium;"  class="login-tab login-text">LOG IN</h3>
+            <form class="example-form" ><br>
+                <mat-label _ngcontent-wsp-c301="" class="required-field loginIcon">Username</mat-label><span style="color:red;">*</span>
+                <mat-form-field appearance="outline" >
+                      <input   type="text" matInput  placeholder="Enter name"
+                        #username="ngModel"
+                        name="username"
+                        ngModel required [class.is-invalid]="username.invalid && username.touched"
+                        class="mat-input-element mat-form-field-autofill-control ng-tns-c116-0 cdk-text-field-autofill-monitored ng-dirty ng-touched is-invalid ng-invalid"
+                        aria-required="true" aria-describedby="mat-error-0">
+                        <mat-error *ngIf="username.invalid && username.touched"
+                        class="m-error" style="color: red;">
+                            Please enter <strong>User name</strong> 
+                          </mat-error>
+                </mat-form-field>
+                <mat-label _ngcontent-wsp-c301="" class="required-field loginIcon">Password</mat-label><span style="color:red;">*</span>
+                <mat-form-field appearance="outline" >
+                      <input id="password" [type]="hide ? 'password' : 'text'" matInput  placeholder="Password"
+                        #passWors="ngModel"
+                        name="passWors"
+                        ngModel required [class.is-invalid]="passWors.invalid && passWors.touched"
+                        class="mat-input-element mat-form-field-autofill-control ng-tns-c116-0 cdk-text-field-autofill-monitored ng-dirty ng-touched is-invalid ng-invalid"
+                        aria-required="true" aria-describedby="mat-error-0">
+                        <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                        <mat-error *ngIf="passWors.invalid && passWors.touched"
+                        class="m-error" style="color: red;">
+                            Please enter Valid PassWord 
+                          </mat-error>
+                </mat-form-field> 
+                        <input type="checkbox"> <span>Remember Me</span> <br>
+                         <a href="">Forgot Password ?</a>
+                         <div  class="example-button-row" >
+                            <button class="btn btn-primary" >Submit</button>
+                        </div><br>
+              </form>
+        </div>
+    </div>
+    <div id="leftdiv" style="background-color:rgb(251, 249, 247);" class="col-12 col-md-5 col-lg-7 login-form">
+        <div>
+            <div>
+                <h3>WELCOME TO OFFICE OF THE SECRETARY OF STATE</h3>
+            </div><br>
+            <div>
+               <h5 style="color: black;">Building a Championship Economy</h5> <br>
+                    Updated upstream Using CorpOnline, you can register new domestic and foreign corporations, file your biennial report, and order documents like good standing certificates and certified copy requests. An Access Vermont Business Services account will be needed to log onto CorpOnline.
+            </div><br>
+            <table>
+                <tr>
+                    <td>
+                        <div id="divcard1" ><mat-card class="example-card">
+                            <mat-card-header>
+                              <mat-card-title><strong>Announcements</strong></mat-card-title>
+                            </mat-card-header>
+                            <mat-card-content>
+                              <p style="color: skyblue;">{{date|date}}</p>
+                              <p >{{longText}}</p>
+                            </mat-card-content>
+                            <mat-card-content>
+                                <p style="color: skyblue;" >{{date|date}}</p>
+                                <p>{{longText2}}</p>    
+                              </mat-card-content>
+                          </mat-card>
+                        </div>
+                    </td>
+                    <td>
+                        <div id="divcard2"><mat-card class="example-card">
+                            <mat-card-header>
+                              <mat-card-title><strong>Events</strong></mat-card-title>
+                            </mat-card-header>
+                            <mat-card-content>
+                              <p style="color: skyblue;">{{date|date}}</p>
+                              <p >{{longText3}}</p>
+                            </mat-card-content>
+                            <mat-card-content>
+                                <p style="color: skyblue;">{{date|date}}</p>
+                                <p>{{longText4}}</p>
+                              </mat-card-content>
+                          </mat-card>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div id="footer" > <p><p id="footerline" style="text-align: center;">128 State Street, Montpelier, VT 05633-1101Phone: 802-828-2363</p></div> 
+</div>

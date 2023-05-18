@@ -1,0 +1,99 @@
+#div2{
+    background-color:rgb(7, 7, 94);
+    
+}
+
+#Vermont ,h5{
+    color: white;
+    text-align:left;
+    padding-left: 5%;
+}
+#name{
+    color: white;
+    text-align:right
+}
+#div3{
+    background-color: aquamarine;
+    margin-top: 2%;
+    
+}
+
+/* this is for input field */
+.example-form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+  }
+  
+  .example-full-width {
+    width: 100%;
+  }
+
+mat-form-field {
+    display: inline-block;
+    position: relative;
+    text-align: left;
+}
+
+mat-form-field {
+    display: block;
+    width: 80%;
+    margin-top: 0rem;
+    margin-bottom: 1rem;
+    border-radius: 0.25rem;
+    padding: 12px 10px;
+   
+}
+input{
+    padding: 8px 8px;
+}
+#formdiv{
+    
+    justify-content: center;
+}
+  /* ............ */
+ button{
+   width: 80%;
+
+ }
+ #footer
+ {   padding: 10px 10px;
+    background-color:rgb(7, 7, 94);
+    color: white;
+    font-size: 80%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    margin-left: -32%;
+    margin-top: 8%;
+ }
+ 
+ #leftdiv{
+    margin-left: 35%;
+    margin-top: -34%;
+ }
+ .example-card {
+    max-width: 400px;
+    border: 55px !important;
+    border-radius: 30px !important;
+    border: #000 !important;
+    background-color: white;
+  }
+  #divcard2{
+    padding-left: 5%;
+  }
+  #div4{
+    background-color: coral;
+    margin-bottom: 10%;
+  }
+  
+  #divcard1{
+    font-size: small;
+  }
+  #footerline{
+    padding-left: 15%;
+  }
+
+  #headsidename{
+    margin-top: -2%;
+  }

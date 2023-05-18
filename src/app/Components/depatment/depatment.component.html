@@ -1,0 +1,24 @@
+    <div class="container">
+    <form #todoForm= "ngForm" (ngSubmit)="todoForm.resetForm()" >
+     <div class="form-group">
+     <h1 class="text-center text-primary">Department</h1>
+      <div class="input-group-prepend">
+          <input type="text"  class="form-control"
+           placeholder="Enter Department" name="todo" [(ngModel)]="_department.departmentName">   
+       <button class="btn btn-primary" (click)="AddCourse(_department)">ADD</button>
+      </div>
+      <div class="data">
+        <ul class="list-instyled">
+             <li *ngFor="let item of departmentArray">
+               <p> <input type="checkbox" class="checked"  name="check" [(ngModel)]="check"  >
+                    {{item.departmentName}} 
+                    <button *ngIf="check" class="btn btn-danger" 
+                    (click)="DeletCourse(item)">Delete</button>
+                </p>                  
+            </li>
+            <button *ngIf="showdelet"  class="btn btn-secondary"  (click)="ClearArray()">Clear</button>
+        </ul>
+        </div>
+     </div>
+    </form>
+   </div>
