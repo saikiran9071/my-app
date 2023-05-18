@@ -1,6 +1,6 @@
-<h1 style="text-align: center;"> JNET Student Portal </h1> <br>
+<h1 style="text-align: center;"> JNET Institutions Portal </h1> <br>
 <div style="text-align: center;"> <br>
-    <h1 style="color:red ;"> Student Login </h1> <br>
+    <h1 style="color:red ;"> Facality Login </h1> <br>
     <div>
         <div>
             <form #formTem="ngForm">
@@ -8,7 +8,7 @@
                     <span>*</span>
                     <mat-label>User Name :</mat-label>
                     <mat-form-field appearance="outline">
-                        <input [(ngModel)]="username" placeholder="Enter Username" type="text" class="form-control" name="userId"
+                        <input [(ngModel)]="username" placeholder="Enter  Username" type="text" class="form-control" name="userId"
                             #Usernametem="ngModel" [class.is-invalid]="Usernametem.invalid && Usernametem.touched"
                             required>
                         <small *ngIf="Usernametem.invalid && Usernametem.touched" class="text-danger"
@@ -32,13 +32,13 @@
                 </div>
                 <div class="form-group mx-sm-5 mb-4">
                     <button [disabled]="formTem.form.invalid" class="btn btn-primary" style="align-items: center;"
-                        (click)="StudentLoginChecking(username,password)"> LOGIN</button>
+                        (click)="FacalityLoginChecking(username,password)"> LOGIN</button>
                 </div>
                 <div class="form-group mx-sm-5 mb-4">
                     <label style="color: cadetblue;"> To Create New Accout Register Here </label>
                 </div>
                 <div class="form-group mx-sm-5 mb-4">
-                    <button class="btn btn-info" routerLink="/studentregistration">Register</button>
+                    <button class="btn btn-info" routerLink="/facalityregister">Register</button>
                 </div>
                 <div class="form-group mx-sm-5 mb-4">
                     <button class="btn btn-info" routerLink="/dashboard">Back</button>

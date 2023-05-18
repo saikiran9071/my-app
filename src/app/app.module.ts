@@ -18,6 +18,9 @@ import {StudentDetailsService} from 'src/app/Services/StudentDetails/student-det
 import { StudentLoginComponent } from './Components/student-login/student-login.component';
 import { StudentRegistrationComponent } from './Components/student-registration/student-registration.component'
 import {MatFormFieldModule} from '@angular/material/form-field';
+import { FacultyLoginComponent } from './Components/faculty-login/faculty-login.component';
+import { InstitutionDashboardComponent } from './Components/institution-dashboard/institution-dashboard.component';
+import { FacalityRegistrationComponent } from './Components/facality-registration/facality-registration.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,7 +29,10 @@ import {MatFormFieldModule} from '@angular/material/form-field';
     JbsLoginComponent,
     StudentDetailsComponent,
     StudentLoginComponent,
-    StudentRegistrationComponent
+    StudentRegistrationComponent,
+    FacultyLoginComponent,
+    InstitutionDashboardComponent,
+    FacalityRegistrationComponent
   ],
   imports: [
     BrowserModule,
