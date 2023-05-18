@@ -27,6 +27,11 @@ export class FacalityDetailsService {
   {
       return this._httpclient.put("https://localhost:44330/api/FacalityDetails/InsertFacalityDetail" ,body)
   }
+  ShowDepartments( ):any
+  { debugger
+    return this._httpclient.get("https://localhost:44330/api/Department/GetDepartment")
+  }
+
 }
 //https://localhost:44330/api/FacalityDetails/InsertFacalityDetail
 //https://localhost:44330/api/FacalityDetails/FacalityLoginChecking?userName=ramesh123&password=remeshkota3

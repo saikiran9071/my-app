@@ -21,6 +21,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import { FacultyLoginComponent } from './Components/faculty-login/faculty-login.component';
 import { InstitutionDashboardComponent } from './Components/institution-dashboard/institution-dashboard.component';
 import { FacalityRegistrationComponent } from './Components/facality-registration/facality-registration.component';
+import {MatSelectModule} from '@angular/material/select';
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,7 +33,8 @@ import { FacalityRegistrationComponent } from './Components/facality-registratio
     StudentRegistrationComponent,
     FacultyLoginComponent,
     InstitutionDashboardComponent,
-    FacalityRegistrationComponent
+    FacalityRegistrationComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -46,7 +48,8 @@ import { FacalityRegistrationComponent } from './Components/facality-registratio
     MatCardModule,
     HttpClientModule,
     MatTableModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    MatSelectModule
   ],
   providers: [StudentDetailsService,],
   bootstrap: [AppComponent]

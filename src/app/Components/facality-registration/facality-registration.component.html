@@ -99,6 +99,26 @@
           </small>
           </mat-form-field>
       </div>
+      <div>
+        <!-- <mat-form-field>
+            <mat-label>Department</mat-label>
+            <mat-select >
+                <mat-option>Select</mat-option>
+                <mat-option  *ngFor="let items of departmentList">{{items.department1}}</mat-option>
+              </mat-select>
+        </mat-form-field> -->
+        <button class="btn btn-primary" (click)="ShowDepartments()">Show department</button> <br>
+        <label>Department</label>
+       
+        <table>
+            <tr>
+                <th>Department</th>
+            </tr>
+            <tr *ngFor="let items of departmentList"> 
+                <td>{{items.department1}}</td>
+            </tr>
+        </table>
+      </div>
         
                 <div  class="form-group mx-sm-5 mb-4">
                     <span>*</span>
