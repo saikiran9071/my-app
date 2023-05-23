@@ -28,7 +28,7 @@ export class FacalityDetailsService {
       return this._httpclient.put("https://localhost:44330/api/FacalityDetails/InsertFacalityDetail" ,body)
   }
   ShowDepartments( ):any
-  { debugger
+  { 
     return this._httpclient.get("https://localhost:44330/api/Department/GetDepartment")
   }
 

@@ -3,7 +3,7 @@
     <h1 style="color:red ;"> Student Login </h1> <br>
     <div>
         <div>
-            <form #formTem="ngForm">
+            <form #formTem="ngForm" (ngSubmit)="SaveForm(formTem)">
                 <div style="width: 10;" class="form-group mx-sm-5 mb-4">
                     <span>*</span>
                     <mat-label>User Name :</mat-label>

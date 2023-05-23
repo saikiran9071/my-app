@@ -1,10 +1,16 @@
 import { Component , ViewChild } from '@angular/core';
 import{StudentDetailsService} from 'src/app/Services/StudentDetails/student-details.service';
 import {MatTable} from '@angular/material/table';
-export class StudentDetails{
-  studentName! : string ;
-  roll ! : number ;
-  course ! : string
+export class StudentDetails
+ {    id !:number
+    userName !: string
+    password !: string
+    isValid!: number
+    firstName!: string
+    lastName!: string
+    confirmPassword!: string
+    course!: string
+    rollNo !: number
 }
 
 @Component({
@@ -22,10 +28,12 @@ table : any
   ShowStudentDetails()
   {
   //  debugger
-   return this._studentDetailsService.ShowStudentDetails().subscribe(
+   this._studentDetailsService.ShowStudentDetails().subscribe(
     (data:any)=>{
       this.studentlistarray = data
     }
    )
+   console.log(this.studentlistarray);
+ 
   }
 }

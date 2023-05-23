@@ -1,154 +1,147 @@
-<h1 style="text-align: center;"> JNET Student Portal </h1>  <br>
+<h1 style="text-align: center;"> JNET Student Portal </h1> <br>
 <div style="text-align: center;"> <br>
-      <h1 style="color:red ;"> Student Registration </h1> <br>
-       <div>
-        <div>
-            <form #form="ngForm" >
-              <div  class="form-group mx-sm-5 mb-4">
-                <span>*</span>
-                <mat-label>Fisrt Name :</mat-label>
-                <mat-form-field appearance="outline" >
-                <input  
-                type="text" 
-                [(ngModel)]="studentDetails.firstName"
-                class="form-control"  
-                name="FisrtNameId" 
-                #FisrtNametemp="ngModel"
-                placeholder="Enter First name "
-                required
-                [class.is-invalid]="FisrtNametemp.invalid && FisrtNametemp.touched"
-                >
-                <small style="color: red" *ngIf="FisrtNametemp.invalid && FisrtNametemp.touched">Enter user name</small>
-                
-              </mat-form-field>
-            </div>
-            <div  class="form-group mx-sm-5 mb-4">
-              <span>*</span>
-              <mat-label>Last Name:</mat-label>
-              <mat-form-field appearance="outline" >
-              <input 
-              type="text" 
-              [(ngModel)]="studentDetails.lastName"
-              class="form-control"  
-              name="lastNameId" 
-                #lastNametemp="ngModel"
-                placeholder="Enter Last name "
-                required
-                [class.is-invalid]="lastNametemp.invalid && lastNametemp.touched"
-              >
-              <small *ngIf="lastNametemp.invalid && lastNametemp.touched" class="text-danger"
-              style="color: red;">
-              Enter Last Name
-              </small>
-              </mat-form-field>
-          </div>
-          <div   class="form-group mx-sm-5 mb-4">
-            <span>*</span>
-            <mat-label>Roll No: :</mat-label>
-            <mat-form-field appearance="outline" >
-            <input 
-            type="number" 
-            [(ngModel)]="studentDetails.rollNo" 
-            class="form-control"  
-            name="rollId" 
-            #rolltem="ngModel"
-            placeholder="Enter Roll No "
-            required
-            [class.is-invalid]="rolltem.invalid && rolltem.touched" 
-            ><small *ngIf="rolltem.invalid && rolltem.touched" class="Error"
-            style="color: red;">
-            Enter Roll No
-            </small>
-            </mat-form-field>
-        </div>
-        <div   class="form-group mx-sm-5 mb-4">
+  <h1 style="color:red ;"> Student Registration </h1> <br>
+  <div>
+    <div>
+      <form #form="ngForm"  (ngSubmit)="completeLogin(form)">
+        <div class="form-group mx-sm-5 mb-4">
           <span>*</span>
-          <mat-label>Course :</mat-label>
-          <mat-form-field appearance="outline" >
-          <input 
-          type="text" 
-          [(ngModel)]="studentDetails.course" 
-          class="form-control"  
-          name="courseId" 
-          #coursetem="ngModel"
-          placeholder="Enter Course"
-          required
-          [class.is-invalid]="coursetem.invalid && coursetem.touched"
-          ><small *ngIf="coursetem.invalid && coursetem.touched" class="Error"
-          style="color: red;">
-          Enter Course
-          </small>
+          <mat-label>Fisrt Name :</mat-label>
+          <mat-form-field appearance="outline">
+            <input type="text" [(ngModel)]="studentDetails.firstName" class="form-control" name="FisrtNameId"
+              #FisrtNametemp="ngModel" placeholder="Enter First name " required
+              [class.is-invalid]="FisrtNametemp.invalid && FisrtNametemp.touched">
+            <small style="color: red" *ngIf="FisrtNametemp.invalid && FisrtNametemp.touched">Enter user name</small>
+
           </mat-form-field>
-      </div>
-        
-                <div  class="form-group mx-sm-5 mb-4">
-                    <span>*</span>
-                    <mat-label>User Name :</mat-label>
-                    <mat-form-field appearance="outline" >
-                    <input 
-                    type="text" 
-                    [(ngModel)]="studentDetails.userName"
-                    class="form-control"  
-                    name="userId" 
-                    #usertem="ngModel"
-                    placeholder="Enter user name "
-                    required
-                    [class.is-invalid]="usertem.invalid && usertem.touched" 
-                    >
-                    <small *ngIf="usertem.invalid && usertem.touched" class="text-danger"
-                    style="color: red;">
-                    Enter User Name
-                    </small>
-                    </mat-form-field>
-                </div>
-                <div class="form-group mx-sm-5 mb-4">
-                    <span>*</span>
-                    <mat-label>PassWord :</mat-label>
-                    <mat-form-field appearance="outline" >
-                    <input 
-                    type="text"
-                    [(ngModel)]="studentDetails.password" 
-                    class="form-control"  
-                    name="password" 
-                    #passwordtem="ngModel"
-                    placeholder="Enter password "
-                    required
-                    [class.is-invalid]="passwordtem.invalid && passwordtem.touched"
-                    ><small *ngIf="passwordtem.invalid && passwordtem.touched" class="Error"
-                    style="color: red;">
-                    Enter Password
-                    </small>
-                    </mat-form-field>
-                </div>
-                <div   class="form-group mx-sm-5 mb-4">
-                  <span>*</span>
-                  <mat-label>Confirm PassWord :</mat-label>
-                  <mat-form-field appearance="outline" >
-                  <input 
-                  type="text" 
-                  [(ngModel)]="studentDetails.confirmPassword" 
-                  class="form-control"  
-                  name="conpws" 
-                  #conpwstem="ngModel"
-                  placeholder="Enter Confirm PassWord "
-                  required
-                  [class.is-invalid]="conpwstem.invalid && conpwstem.touched"
-                  ><small *ngIf="conpwstem.invalid && conpwstem.touched" class="Error"
-                  style="color: red;">
-                  Enter Confirm Password
-                  </small>
-                  </mat-form-field>
-              </div>
-              
-                <div class="form-group mx-sm-5 mb-4">
-                    <button class="btn btn-primary"
-                    style="align-items: center;"
-                    (click)="InsertStudentRegDetails(studentDetails)"
-                    [disabled]="form.form.invalid"
-                    > SUBMITE</button>
-                    <button style="margin-left: 3%;" class="btn btn-info"
-                     routerLink="/studentlogin" >Back to Login</button>
-                </div>
-            </form>
         </div>
+        <div class="form-group mx-sm-5 mb-4">
+          <span>*</span>
+          <mat-label>Last Name:</mat-label>
+          <mat-form-field appearance="outline">
+            <input type="text" [(ngModel)]="studentDetails.lastName" class="form-control" name="lastNameId"
+              #lastNametemp="ngModel" placeholder="Enter Last name " required
+              [class.is-invalid]="lastNametemp.invalid && lastNametemp.touched">
+            <small *ngIf="lastNametemp.invalid && lastNametemp.touched" class="text-danger" style="color: red;">
+              Enter Last Name
+            </small>
+          </mat-form-field>
+        </div>
+        <div class="form-group mx-sm-5 mb-4">
+          <span>*</span>
+          <mat-label>Roll No: :</mat-label>
+          <mat-form-field appearance="outline">
+            <input type="number" [(ngModel)]="studentDetails.rollNo" class="form-control" name="rollId"
+              #rolltem="ngModel" placeholder="Enter Roll No " required
+              [class.is-invalid]="rolltem.invalid && rolltem.touched"><small *ngIf="rolltem.invalid && rolltem.touched"
+              class="Error" style="color: red;">
+              Enter Roll No
+            </small>
+          </mat-form-field>
+        </div>
+        <div class="form-group mx-sm-5 mb-4">
+          <label style="color: red;">Select Your Standard</label><br>
+      </div>
+        <div>
+          <p> School :  <input  type="checkbox" name="sch" [(ngModel)]="school"></p>  
+          <p>Intermediate :  <input type="checkbox" name="int" [(ngModel)]="inter"></p> 
+          <p>Degree :  <input type="checkbox" name="deg" [(ngModel)]="degree"></p> 
+          <p>Btech :  <input type="checkbox" name="btch" [(ngModel)]="btech"></p> 
+        </div>
+        <div *ngIf="school" class="form-group mx-sm-5 mb-4">
+          <span>*</span>
+          <mat-label>Standard :</mat-label>
+          <mat-form-field appearance="outline">
+              <input  type="number" [(ngModel)]= "studentDetails.studentStandardId" class="form-control" name="courseId"
+              #coursetem="ngModel" placeholder="Enter Course" required
+              [class.is-invalid]="coursetem.invalid && coursetem.touched">
+              <small
+              *ngIf="coursetem.invalid && coursetem.touched" class="Error" style="color: red;">
+              Enter Course
+            </small>
+          </mat-form-field>
+        </div>
+        <div *ngIf="inter" class="form-group mx-sm-5 mb-4">
+          <span>*</span>
+          <mat-label>Intermediate Course :</mat-label>
+          <mat-form-field appearance="outline">
+              <input  type="number" [(ngModel)]= "studentDetails.interCourseId" class="form-control" name="courseId"
+              #coursetem="ngModel" placeholder="Enter Course" required
+              [class.is-invalid]="coursetem.invalid && coursetem.touched">
+              <small
+              *ngIf="coursetem.invalid && coursetem.touched" class="Error" style="color: red;">
+              Enter Course
+            </small>
+          </mat-form-field>
+        </div>
+        <div *ngIf="degree" class="form-group mx-sm-5 mb-4">
+          <span>*</span>
+          <mat-label>Degree Course :</mat-label>
+          <mat-form-field appearance="outline">
+              <input  type="number" [(ngModel)]= "studentDetails.degreeCourseId" class="form-control" name="courseId"
+              #coursetem="ngModel" placeholder="Enter Course" required
+              [class.is-invalid]="coursetem.invalid && coursetem.touched">
+              <small
+              *ngIf="coursetem.invalid && coursetem.touched" class="Error" style="color: red;">
+              Enter Course
+            </small>
+          </mat-form-field>
+        </div>
+        <div *ngIf="btech" class="form-group mx-sm-5 mb-4">
+          <span>*</span>
+          <mat-label>Btech Course :</mat-label>
+          <mat-form-field appearance="outline">
+              <input  type="number" [(ngModel)]= "studentDetails.btechCourseId" class="form-control" name="courseId"
+              #coursetem="ngModel" placeholder="Enter Course" required
+              [class.is-invalid]="coursetem.invalid && coursetem.touched">
+              <small
+              *ngIf="coursetem.invalid && coursetem.touched" class="Error" style="color: red;">
+              Enter Course
+            </small>
+          </mat-form-field>
+        </div>
+        <div class="form-group mx-sm-5 mb-4">
+          <span>*</span>
+          <mat-label>User Name :</mat-label>
+          <mat-form-field appearance="outline">
+            <input type="text" [(ngModel)]="studentDetails.userName" class="form-control" name="userId"
+              #usertem="ngModel" placeholder="Enter user name " required
+              [class.is-invalid]="usertem.invalid && usertem.touched">
+            <small *ngIf="usertem.invalid && usertem.touched" class="text-danger" style="color: red;">
+              Enter User Name
+            </small>
+          </mat-form-field>
+        </div>
+        <div class="form-group mx-sm-5 mb-4">
+          <span>*</span>
+          <mat-label>PassWord :</mat-label>
+          <mat-form-field appearance="outline">
+            <input type="text" [(ngModel)]="studentDetails.password" class="form-control" name="password"
+              #passwordtem="ngModel" placeholder="Enter password " required
+              [class.is-invalid]="passwordtem.invalid && passwordtem.touched"><small
+              *ngIf="passwordtem.invalid && passwordtem.touched" class="Error" style="color: red;">
+              Enter Password
+            </small>
+          </mat-form-field>
+        </div>
+        <div class="form-group mx-sm-5 mb-4">
+          <span>*</span>
+          <mat-label>Confirm PassWord :</mat-label>
+          <mat-form-field appearance="outline">
+            <input type="text" [(ngModel)]="studentDetails.confirmPassword" class="form-control" name="conpws"
+              #conpwstem="ngModel" placeholder="Enter Confirm PassWord " required
+              [class.is-invalid]="conpwstem.invalid && conpwstem.touched"><small
+              *ngIf="conpwstem.invalid && conpwstem.touched" class="Error" style="color: red;">
+              Enter Confirm Password
+            </small>
+          </mat-form-field>
+        </div>
+
+        <div class="form-group mx-sm-5 mb-4">
+          <button class="btn btn-primary" style="align-items: center;" (click)="InsertStudentRegDetails(studentDetails)"
+            [disabled]="form.form.invalid"> SUBMITE</button>
+          <button style="margin-left: 3%;" class="btn btn-info" routerLink="/studentlogin">Back to Login</button>
+        </div>
+      </form>
     </div>
+  </div>

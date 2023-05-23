@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import{StudentDetailsService} from 'src/app/Services/StudentDetails/student-details.service';
-
+import {NgForm} from '@angular/forms'
 export class StudenetLoginDetails
 {
   
@@ -32,5 +32,9 @@ constructor( private _studentDetailsService : StudentDetailsService ,private _ro
         }
       }
     )
+  }
+  SaveForm(register : NgForm)
+  {
+    register.reset();
   }
 }

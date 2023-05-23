@@ -11,6 +11,10 @@ export class StudentDetails
     confirmPassword!: string
     course!: string
     rollNo !: number
+    studentStandardId  !: number
+    degreeCourseId !: number
+    btechCourseId !: number
+    interCourseId !: number
 }
 
 @Injectable({
@@ -24,7 +28,7 @@ export class StudentDetailsService {
 
   ShowStudentDetails ():any
   {
-    return this._httpclient.get("https://localhost:44330/api/Student/GetStudentDetails");
+    return this._httpclient.get("https://localhost:44330/api/StudentLogin/DisplayStudentDetail");
   }
 
   // for checking the student Login Details
@@ -38,4 +42,4 @@ export class StudentDetailsService {
       return this._httpclient.put("https://localhost:44330/api/StudentLogin/InsertStudentRegDetails" ,body)
   }
 }//https://localhost:44330/api/StudentLogin/InsertStudentRegDetails
-    
+

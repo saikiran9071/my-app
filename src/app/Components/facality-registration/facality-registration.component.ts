@@ -2,9 +2,11 @@ import { Component , ViewChild ,OnInit} from '@angular/core';
 import{FacalityDetailsService ,FacalityDetails} from 'src/app/Services/StudentDetails/Facatily/facality-details.service';
 import { Router } from '@angular/router';
 import {NgForm} from '@angular/forms'
+
 export class DepartmentDetails
-{
-  department1 !: string
+{ id!:number
+  departmentName!: string
+  //facultyDetails: FacalityDetails  []=[]
 }
 @Component({
   selector: 'app-facality-registration',
@@ -18,11 +20,19 @@ export class FacalityRegistrationComponent implements OnInit{
   facalityDetails : FacalityDetails = new FacalityDetails();
   emptyobj : FacalityDetails = new FacalityDetails();
   reguistersucces!:NgForm
-  departmentList : DepartmentDetails []=[];
-  constructor( private _faclityDetailsService : FacalityDetailsService ,private _router : Router)
+  
+  //departmentList : DepartmentDetails []=[];
+  departmentList : any;
+  constructor( private _faclityDetailsService : FacalityDetailsService ,
+    private _router : Router)
   {}
   ngOnInit(): void {
-   
+    this._faclityDetailsService.ShowDepartments().subscribe(
+      (respo:any)=>{
+        this.departmentList=respo;
+        console.log(this.departmentList)
+      }
+    )
   }
   completeLogin(login :NgForm){
     // In .ts file
@@ -56,13 +66,9 @@ export class FacalityRegistrationComponent implements OnInit{
       )
     }
   }
-  ShowDepartments():any
+  showDepartment():any
   { 
-    debugger
-    return this._faclityDetailsService.ShowDepartments().subscribe(
-      (respo:any)=>{
-        this.departmentList=respo;
-      }
-    )
+   // debugger
+    
   }
 }

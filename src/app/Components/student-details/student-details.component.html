@@ -6,13 +6,13 @@
             <th >Course</th>
         </tr>
         <tr *ngFor="let item of studentlistarray">
-                <td >{{item.studentName}}</td>
-                <td>{{item.roll}}</td>
+                <td >{{item.firstName}} {{item.lastName}}</td>
+                <td>{{item.rollNo}}</td>
                 <td>{{item.course}}</td>
         </tr >
     </table>
     <button class="btn btn-primary" (click)="ShowStudentDetails()" > SHOW</button>
 </div>
-<!-- <ng-container matColumnDef="position">
+<!-- <ng-container matColumnDef="position"> 
     <td mat-cell>{{item.course}}</td>
 </ng-container> -->
