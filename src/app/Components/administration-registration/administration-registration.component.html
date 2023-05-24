@@ -1,16 +1,17 @@
+
 <h1 style="text-align: center;"> JNET Institutions Portal </h1>  <br>
 <div style="text-align: center;"> <br>
-      <h1 style="color:red ;"> Facality Registration </h1> <br>
+      <h1 style="color:red ;"> Administration Registration </h1> <br>
        <div>
         <div>
             <form #form="ngForm"  (ngSubmit)="completeLogin(form)">
               <div  class="form-group mx-sm-5 mb-4">
                 <span>*</span>
-                <mat-label>Fisrt Name :</mat-label>
+                <mat-label>First Name :</mat-label>
                 <mat-form-field appearance="outline" >
                 <input  
                 type="text" 
-                [(ngModel)]="facalityDetails.facaltyname"
+                [(ngModel)]="administrationDetails.authorityFirstname"
                 class="form-control"  
                 name="FisrtNameId" 
                 #FisrtNametemp="ngModel"
@@ -28,7 +29,7 @@
               <mat-form-field appearance="outline" >
               <input 
               type="text" 
-              [(ngModel)]="facalityDetails.lastname"
+              [(ngModel)]="administrationDetails.lastname"
               class="form-control"  
               name="lastNameId" 
                 #lastNametemp="ngModel"
@@ -48,7 +49,7 @@
             <mat-form-field appearance="outline" >
             <input 
             type="tel" 
-            [(ngModel)]="facalityDetails.phone" 
+            [(ngModel)]="administrationDetails.phone" 
             class="form-control"  
             name="rollId" 
             #rolltem="ngModel"
@@ -67,7 +68,7 @@
             <mat-form-field appearance="outline" >
             <input 
             type="tel" 
-            [(ngModel)]="facalityDetails.email" 
+            [(ngModel)]="administrationDetails.email" 
             class="form-control"  
             name="email" 
             #emailtem="ngModel"
@@ -82,24 +83,24 @@
         </div>
         <div   class="form-group mx-sm-5 mb-4">
           <span>*</span>
-          <mat-label>Department :</mat-label>
+          <mat-label>Designation :</mat-label>
           <mat-form-field appearance="outline" >
           <input 
           type="number" 
-          [(ngModel)]="facalityDetails.departmentId" 
+          [(ngModel)]="administrationDetails.designationId" 
           class="form-control"  
           name="courseId" 
           #coursetem="ngModel"
-          placeholder="Enter Department"
+          placeholder="Enter Designation"
           required
           [class.is-invalid]="coursetem.invalid && coursetem.touched"
           ><small *ngIf="coursetem.invalid && coursetem.touched" class="Error"
           style="color: red;">
-          Select Department
+         Enter Designation
           </small>
           </mat-form-field>
       </div>
-      <div>
+      <!-- <div>
       <label>Department</label>
       </div>
       <div class="form-group mx-sm-5 mb-4" >
@@ -107,14 +108,14 @@
           <option>--select--</option>
           <option [value]="dep.id" *ngFor="let dep of departmentList">{{dep.departmentName}}</option>
         </select>
-      </div>
+      </div> -->
                 <div  class="form-group mx-sm-5 mb-4">
                     <span>*</span>
                     <mat-label>User Name :</mat-label>
                     <mat-form-field appearance="outline" >
                     <input 
                     type="text" 
-                    [(ngModel)]="facalityDetails.username"
+                    [(ngModel)]="administrationDetails.username"
                     class="form-control"  
                     name="userId" 
                     #usertem="ngModel"
@@ -134,11 +135,30 @@
                     <mat-form-field appearance="outline" >
                     <input 
                     type="text"
-                    [(ngModel)]="facalityDetails.password" 
+                    [(ngModel)]="administrationDetails.password" 
                     class="form-control"  
                     name="password" 
                     #passwordtem="ngModel"
                     placeholder="Enter password "
+                    required
+                    [class.is-invalid]="passwordtem.invalid && passwordtem.touched"
+                    ><small *ngIf="passwordtem.invalid && passwordtem.touched" class="Error"
+                    style="color: red;">
+                    Enter Password
+                    </small>
+                    </mat-form-field>
+                </div>
+                <div class="form-group mx-sm-5 mb-4">
+                    <span>*</span>
+                    <mat-label>Confirm PassWord :</mat-label>
+                    <mat-form-field appearance="outline" >
+                    <input 
+                    type="text"
+                    [(ngModel)]="administrationDetails.confirmPassword" 
+                    class="form-control"  
+                    name="password" 
+                    #passwordtem="ngModel"
+                    placeholder="Enter Confirm password "
                     required
                     [class.is-invalid]="passwordtem.invalid && passwordtem.touched"
                     ><small *ngIf="passwordtem.invalid && passwordtem.touched" class="Error"
@@ -169,17 +189,16 @@
               <div class="form-group mx-sm-5 mb-4">
                 <button class="btn btn-primary"
                 style="align-items: center;"
-                (click)="InsertStudentRegDetails(facalityDetails)"
+                (click)="InsertStudentRegDetails(administrationDetails)"
                 [disabled]="form.form.invalid"
                 > SUBMITE</button>
               </div>
                 <div class="form-group mx-sm-5 mb-4">                   
                     <button style="margin-left: 3%;" class="btn btn-info"
-                     routerLink="/facalitylogin" >Back to Login</button>
+                     routerLink="/administrationlogin" >Back to Login</button>
                      <button style="margin-left: 3%;" class="btn btn-secondary"
                      routerLink="/dashboard" >Back to Home</button>
                 </div>
-                
             </form>
         </div>
     </div>

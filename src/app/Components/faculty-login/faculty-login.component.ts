@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-
 import{FacalityDetailsService}from 'src/app/Services/StudentDetails/Facatily/facality-details.service';
 @Component({
   selector: 'app-faculty-login',

@@ -138,10 +138,18 @@
         </div>
 
         <div class="form-group mx-sm-5 mb-4">
-          <button class="btn btn-primary" style="align-items: center;" (click)="InsertStudentRegDetails(studentDetails)"
-            [disabled]="form.form.invalid"> SUBMITE</button>
-          <button style="margin-left: 3%;" class="btn btn-info" routerLink="/studentlogin">Back to Login</button>
+          <button class="btn btn-primary"
+          style="align-items: center;"
+          (click)="InsertStudentRegDetails(studentDetails)"
+          [disabled]="form.form.invalid"
+          > SUBMITE</button>
         </div>
+          <div class="form-group mx-sm-5 mb-4">                   
+              <button style="margin-left: 3%;" class="btn btn-info"
+               routerLink="/studentlogin" >Back to Login</button>
+               <button style="margin-left: 3%;" class="btn btn-secondary"
+               routerLink="/dashboard" >Back to Home</button>
+          </div>
       </form>
     </div>
   </div>

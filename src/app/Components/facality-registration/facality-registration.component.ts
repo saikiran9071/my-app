@@ -66,9 +66,5 @@ export class FacalityRegistrationComponent implements OnInit{
       )
     }
   }
-  showDepartment():any
-  { 
-   // debugger
-    
-  }
+  
 }

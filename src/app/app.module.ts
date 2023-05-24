@@ -22,6 +22,9 @@ import { FacultyLoginComponent } from './Components/faculty-login/faculty-login.
 import { InstitutionDashboardComponent } from './Components/institution-dashboard/institution-dashboard.component';
 import { FacalityRegistrationComponent } from './Components/facality-registration/facality-registration.component';
 import {MatSelectModule} from '@angular/material/select';
+import { AdministrationLoginComponent } from './Components/administration-login/administration-login.component';
+import { AdministrationRegistrationComponent } from './Components/administration-registration/administration-registration.component';
+import { FacalityDashboadComponent } from './Components/facality-dashboad/facality-dashboad.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,6 +37,9 @@ import {MatSelectModule} from '@angular/material/select';
     FacultyLoginComponent,
     InstitutionDashboardComponent,
     FacalityRegistrationComponent,
+    AdministrationLoginComponent,
+    AdministrationRegistrationComponent,
+    FacalityDashboadComponent,
     
   ],
   imports: [

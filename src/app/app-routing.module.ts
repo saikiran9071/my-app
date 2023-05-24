@@ -10,6 +10,9 @@ import { InstitutionDashboardComponent } from './Components/institution-dashboar
 
 import { FacultyLoginComponent } from './Components/faculty-login/faculty-login.component';
 import { FacalityRegistrationComponent } from './Components/facality-registration/facality-registration.component';
+import { AdministrationLoginComponent } from './Components/administration-login/administration-login.component';
+import { AdministrationRegistrationComponent } from './Components/administration-registration/administration-registration.component';
+import { FacalityDashboadComponent } from './Components/facality-dashboad/facality-dashboad.component';
 const routes: Routes = [
    {path:"course" , component:CouresComponent},
    {path:"department" , component:DepatmentComponent},
@@ -20,6 +23,9 @@ const routes: Routes = [
    {path : "dashboard" , component : InstitutionDashboardComponent},
    {path : "facalitylogin" , component : FacultyLoginComponent},
    {path : "facalityregister" , component : FacalityRegistrationComponent},
+   {path : "administrationlogin" , component : AdministrationLoginComponent},
+   {path : "administrationregister" , component : AdministrationRegistrationComponent},
+   {path : "facalitydashboard" , component : FacalityDashboadComponent},
 
 ];
 @NgModule({
