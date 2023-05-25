@@ -1,17 +1,26 @@
 <div>
-    <table >
-        <tr >
+    <table>
+        <tr>
             <th>Student Name</th>
-            <th >Roll</th>
-            <th >Course</th>
+            <th>Roll</th>
+            <th>Course</th>
+            <th>Status</th>
         </tr>
         <tr *ngFor="let item of studentlistarray">
-                <td >{{item.firstName}} {{item.lastName}}</td>
-                <td>{{item.rollNo}}</td>
-                <td>{{item.course}}</td>
-        </tr >
+            <td>{{item.firstName}} {{item.lastName}}</td>
+            <td>{{item.rollNo}}</td>
+            <td>{{item.course}}</td>
+            <td>
+                <div *ngIf="showfollow">
+                    <button  (click)="Follow()" class="btn btn-primary"> Follow</button>
+                </div>
+                <div  *ngIf="showunfollow">
+                    <button (click)="Follow()" class="btn btn-danger"> unfollow</button>
+                </div>
+            </td>
+        </tr>
     </table>
-    <button class="btn btn-primary" (click)="ShowStudentDetails()" > SHOW</button>
+    <button class="btn btn-primary" (click)="ShowStudentDetails()"> SHOW</button>
 </div>
 <!-- <ng-container matColumnDef="position"> 
     <td mat-cell>{{item.course}}</td>

@@ -41,5 +41,10 @@ export class StudentDetailsService {
   {
       return this._httpclient.put("https://localhost:44330/api/StudentLogin/InsertStudentRegDetails" ,body)
   }
+  checkFollow( resquest : boolean) : any
+  {
+    return this._httpclient.get("https://localhost:44330/api/Followtoggel/Toggelebutton?follow="+resquest);
+  }
 }//https://localhost:44330/api/StudentLogin/InsertStudentRegDetails
 
+// https://localhost:44330/api/Followtoggel/Toggelebutton?follow=false

@@ -36,4 +36,27 @@ table : any
    console.log(this.studentlistarray);
  
   }
+  showfollow : boolean = true;
+  showunfollow : boolean = false;
+  resquest !: boolean ;
+Follow()
+{ debugger
+ 
+  if(this.showfollow=true)
+  {
+    return this._studentDetailsService.checkFollow(this.resquest=true).subscribe(
+      (resp:boolean)=>{
+        this.showfollow=resp;
+       // this.showunfollow=resp;
+      })
+  }
+    if(this.showunfollow=true)
+    {
+    return this._studentDetailsService.checkFollow(this.resquest=false).subscribe(
+      (resp:boolean)=>{
+        this.showfollow=resp;
+        //this.showunfollow=resp;
+      })
+    }
+}
 }
