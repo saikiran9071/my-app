@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component , Input } from '@angular/core';
 import { Router } from '@angular/router';
 import{StudentDetailsService} from 'src/app/Services/StudentDetails/student-details.service';
 import {NgForm} from '@angular/forms'
@@ -6,14 +6,17 @@ export class StudenetLoginDetails
 {
   
 }
+
 @Component({
   selector: 'app-student-login',
   templateUrl: './student-login.component.html',
   styleUrls: ['./student-login.component.css']
 })
 export class StudentLoginComponent {
+  
 constructor( private _studentDetailsService : StudentDetailsService ,private _router : Router)
 {}
+
   username! : string ;
   password !: string;
   test !: string;

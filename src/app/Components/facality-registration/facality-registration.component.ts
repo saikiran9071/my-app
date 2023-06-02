@@ -66,6 +66,4 @@ export class FacalityRegistrationComponent implements OnInit{
       )
     }
   }
-  
-  
 }
