@@ -31,6 +31,8 @@ export class FacalityDetailsService {
   { 
     return this._httpclient.get("https://localhost:44330/api/Department/GetDepartment")
   }
+  
+
 
 }
 //https://localhost:44330/api/FacalityDetails/InsertFacalityDetail
