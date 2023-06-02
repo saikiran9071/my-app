@@ -37,26 +37,39 @@ table : any
  
   }
   showfollow : boolean = true;
-  showunfollow : boolean = false;
+ // showunfollow : boolean = false;
   resquest !: boolean ;
-Follow()
+  toggle = true;
+  status = 'Unfollow'; 
+  showtest =true; 
+Follow(event:any)
 { debugger
  
-  if(this.showfollow=true)
-  {
-    return this._studentDetailsService.checkFollow(this.resquest=true).subscribe(
+ // if(this.showfollow)
+ this.showfollow=event.target.innerText=='follow' ? true : false;
+  
+    return this._studentDetailsService.checkFollow(this.resquest=this.showfollow).subscribe(
       (resp:boolean)=>{
-        this.showfollow=resp;
-       // this.showunfollow=resp;
+       this.showfollow = resp;
+       this.toggle = resp;
+       //this.toggle = !this.toggle;
+       this.status = this.toggle ? 'follow' : 'Unfollow';
       })
   }
-    if(this.showunfollow=true)
-    {
-    return this._studentDetailsService.checkFollow(this.resquest=false).subscribe(
-      (resp:boolean)=>{
-        this.showfollow=resp;
-        //this.showunfollow=resp;
-      })
-    }
-}
+    // if(this.showunfollow)
+    // {
+    // return this._studentDetailsService.checkFollow(this.resquest=false).subscribe(
+    //   (resp:boolean)=>{
+    //     this.showfollow=resp;
+    //     this.showunfollow=!resp;
+    //   })
+    // } 
+ //'walking' ? 'steps' : 'km';
+
+
+// enableDisableRule() {
+
+//     this.toggle = !this.toggle;
+//     this.status = this.toggle ? 'Enable' : 'Disable';
+// }
 }

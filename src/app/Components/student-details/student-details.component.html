@@ -1,26 +1,34 @@
 <div>
-    <table>
-        <tr>
-            <th>Student Name</th>
-            <th>Roll</th>
-            <th>Course</th>
-            <th>Status</th>
-        </tr>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th class="thead-dark">Student Name</th>
+                <th scope="col">Roll</th>
+                <th scope="col">Course</th>
+                <th>Status</th>
+            </tr>
+        </thead>
         <tr *ngFor="let item of studentlistarray">
             <td>{{item.firstName}} {{item.lastName}}</td>
             <td>{{item.rollNo}}</td>
             <td>{{item.course}}</td>
             <td>
-                <div *ngIf="showfollow">
-                    <button  (click)="Follow()" class="btn btn-primary"> Follow</button>
+                <!-- <div *ngIf="showfollow">
+                    <button (click)="Follow()" class="btn btn-primary"> Follow</button>
                 </div>
-                <div  *ngIf="showunfollow">
+                <div *ngIf="showunfollow">
                     <button (click)="Follow()" class="btn btn-danger"> unfollow</button>
+                </div> -->
+                <div>
+                    <button (click)="Follow($event)" [ngClass]="{'btn btn-primary' : showfollow, 'btn btn-danger': !showfollow}">
+                        {{status}}
+                    </button>
                 </div>
             </td>
         </tr>
     </table>
     <button class="btn btn-primary" (click)="ShowStudentDetails()"> SHOW</button>
+    <button (click)="showtest = !showtest" [ngClass]="'showtest' ? 'btn btn-primary' : 'btn btn-danger'"> {{showtest ? 'Test' : 'notTest'}}</button>
 </div>
 <!-- <ng-container matColumnDef="position"> 
     <td mat-cell>{{item.course}}</td>
